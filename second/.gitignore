@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+
+.env
+
+db_data/
+
+*.pb.go
+
+bin/

@@ -1,0 +1,20 @@
+services:
+  go_auth_db:
+    image: postgres:17
+    container_name: go_auth_db
+    ports:
+      - "5674:5432"
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+
+  adminer:
+    image: adminer:latest
+    container_name: go_auth_adm
+    ports:
+      - "858:8080"
+    depends_on:
+      - go_auth_db

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "example/first/proto";
+
+service ChatService {
+  rpc CreateChat(CreateChatRequest) returns (CreateChatResponse);
+  rpc GetChatInfo(GetChatInfoRequest) returns (GetChatInfoResponse);
+}
+
+message CreateChatRequest {
+  string title = 1;
+  int32 user_id = 2;
+}
+message CreateChatResponse {
+  string extId = 1;
+}
+
+message GetChatInfoRequest{}
+message GetChatInfoResponse{}

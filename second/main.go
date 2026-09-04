@@ -26,7 +26,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("не удалось подключиться: %v", err)
 	}
-	log.Printf("Успешое подключение GRPC сервера")
+	log.Printf("Успешное подключение GRPC сервера")
 	defer conn.Close()
 
 	v1.SetupRoutes(r)

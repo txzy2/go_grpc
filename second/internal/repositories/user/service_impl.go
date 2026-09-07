@@ -6,14 +6,14 @@ import (
 )
 
 // TODO: ДОбавить репо
-type service struct {
+type UserService struct {
 	//userRepo IUserRepo
 }
 
 func newUserService() IUserService {
-	return &service{}
+	return &UserService{}
 }
 
-func (ser *service) CreateUser(dto user.CreateUserDTO) (*domain.User, error) {
+func (ser *UserService) CreateUser(dto user.CreateUserDTO) (*domain.User, error) {
 	return nil, nil
 }

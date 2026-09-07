@@ -7,12 +7,12 @@ import (
 )
 
 func SetupRoutes(r *gin.Engine) {
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello, World!")
-	})
-
 	api := r.Group("/api/v1")
 	{
+		api.GET("", func(c *gin.Context) {
+			c.String(200, "Hello, World!")
+		})
+
 		auth.SetupRoutes(api)
 	}
 }

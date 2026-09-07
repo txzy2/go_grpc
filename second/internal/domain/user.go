@@ -1,6 +1,11 @@
-package entity
+package domain
 
-import "golang.org/x/crypto/bcrypt"
+import (
+	"second/pkg/enums"
+	"time"
+
+	"golang.org/x/crypto/bcrypt"
+)
 
 type User struct {
 	Id   int    `json:"id"`
@@ -8,6 +13,11 @@ type User struct {
 
 	Email    string `json:"email"`
 	password string `json:"-"`
+
+	Status enums.StatusState `json:"status"`
+
+	CreatedAt time.Time `json:"created_at"`
+	UpdatedAt time.Time `json:"updated_at"`
 }
 
 func (u *User) SetPassword(rawPassword string) error {

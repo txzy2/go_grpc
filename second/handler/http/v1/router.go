@@ -1,6 +1,10 @@
 package v1
 
-import "github.com/gin-gonic/gin"
+import (
+	"second/handler/http/v1/auth"
+
+	"github.com/gin-gonic/gin"
+)
 
 func SetupRoutes(r *gin.Engine) {
 	r.GET("/", func(c *gin.Context) {
@@ -9,11 +13,6 @@ func SetupRoutes(r *gin.Engine) {
 
 	api := r.Group("/api/v1")
 	{
-		auth := api.Group("/auth")
-		{
-			auth.GET("", func(c *gin.Context) {
-				c.JSON(200, gin.H{"msg": "ok"})
-			})
-		}
+		auth.SetupRoutes(api)
 	}
 }

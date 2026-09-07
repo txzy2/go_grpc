@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	v1 "second/internal/http/v1"
+	"second/handler/http/v1"
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
